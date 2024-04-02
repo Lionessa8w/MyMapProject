@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyMap</string>
+    <string name="phone_number">Введите номер телефона</string>
+    <string name="sms_text">Получить SMS-код</string>
+    <string name="hint_sms_code">Введите SMS-код</string>
+    <string name="button_sms_code">Авторизоваться</string>
+    <string name="button_map_like">"Любимое место"</string>
+    <string name="profile_text">"Мой профиль"</string>
+</resources>
