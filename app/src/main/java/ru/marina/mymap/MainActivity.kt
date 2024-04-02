@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.mapview.MapView
 import ru.marina_w.my_map.MapFragment
+import ru.marina_w.my_map.RegistrationFragment
 
 class MainActivity : AppCompatActivity() {
-
+// инициализировать firebase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         }
         // навигация на фрагмент
-        supportFragmentManager.beginTransaction().replace(R.id.container, MapFragment()).commit()
+ //       supportFragmentManager.beginTransaction().replace(R.id.container, MapFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.container, RegistrationFragment()).commit()
 
     }
     override fun onStart() {

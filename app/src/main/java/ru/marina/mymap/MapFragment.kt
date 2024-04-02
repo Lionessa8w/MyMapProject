@@ -31,6 +31,7 @@ class MapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mapView = view.findViewById(R.id.mapview)
+        // показывает начальную точку карты
         moveToStartLocation()
     }
 
