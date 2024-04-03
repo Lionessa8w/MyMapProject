@@ -31,6 +31,11 @@ class UserProfileFragment : Fragment() {
         val numberPhoneUser: TextView = view.findViewById(R.id.number_phone)
         val statusSong: TextView = view.findViewById(R.id.song_status)
         val buttonMapLike: Button = view.findViewById(R.id.button_map_like)
+        val buttonSetting: Button= view.findViewById(R.id.button_setting)
+
+        buttonSetting.setOnClickListener {
+            // редактирование профиля
+        }
 
         buttonMapLike.setOnClickListener {
             //открытие карты

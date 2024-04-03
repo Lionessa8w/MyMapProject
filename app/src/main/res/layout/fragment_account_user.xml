@@ -72,6 +72,13 @@
             android:text="@string/button_map_like"
             android:textSize="24dp"/>
 
+        <Button
+            android:id="@+id/button_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:textSize="24dp"/>
+
     </LinearLayout>
 
 

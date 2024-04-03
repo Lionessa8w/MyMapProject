@@ -6,4 +6,5 @@
     <string name="button_sms_code">Авторизоваться</string>
     <string name="button_map_like">"Любимое место"</string>
     <string name="profile_text">"Мой профиль"</string>
+    <string name="setting">"Редактировать профиль"</string>
 </resources>
