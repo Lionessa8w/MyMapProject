@@ -1,4 +1,4 @@
-package ru.marina_w.my_map
+package ru.marina.mymap
 
 import android.os.Bundle
 import android.util.Log
@@ -15,21 +15,21 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.marina.mymap.R
-import ru.marina_w.my_map.auth.ActionNumberPhone
-import ru.marina_w.my_map.auth.RegistrationPhoneViewModel
+import ru.marina.mymap.auth.ActionNumberPhone
+import ru.marina.mymap.auth.RegistrationPhoneViewModel
 
 const val NUMBER_LENGTH = 10
 
-class RegistrationFragment : Fragment() {
+class RegistrationNumberPhoneFragment : Fragment() {
 
     private val viewModelPhoneNumber = RegistrationPhoneViewModel()
     private var timerJob: Job? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
+        Log.d("checkResult", "onCreate: сюда зашел onCreateView fragment")
         return inflater.inflate(R.layout.fragment_registration, container, false)
+
     }
 
     private fun sendNumberPhone(number: String) {
@@ -38,6 +38,8 @@ class RegistrationFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("checkResult", "onCreate: сюда зашел onCreate fragment")
+
 
     }
 

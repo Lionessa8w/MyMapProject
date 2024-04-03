@@ -1,10 +1,9 @@
-package ru.marina_w.my_map.room
+package ru.marina.mymap.room
 
 import androidx.room.Dao
-import androidx.room.Database
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.RoomDatabase
+
 @Dao
 interface FavoritePlaceDao {
     @Query("SELECT * FROM favorite_places")

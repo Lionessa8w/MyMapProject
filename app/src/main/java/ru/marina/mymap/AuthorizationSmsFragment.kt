@@ -1,4 +1,4 @@
-package ru.marina_w.my_map
+package ru.marina.mymap
 
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +11,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import ru.marina.mymap.R
-import ru.marina_w.my_map.auth.ActionSMS
-import ru.marina_w.my_map.auth.SmsAuthorizationViewModel
+import ru.marina.mymap.auth.ActionSMS
+import ru.marina.mymap.auth.SmsAuthorizationViewModel
 
 const val SMS_CODE = 5
 

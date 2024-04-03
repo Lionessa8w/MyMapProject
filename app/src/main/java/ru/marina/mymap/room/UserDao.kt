@@ -1,4 +1,4 @@
-package ru.marina_w.my_map.room
+package ru.marina.mymap.room
 
 import androidx.room.Dao
 import androidx.room.Database

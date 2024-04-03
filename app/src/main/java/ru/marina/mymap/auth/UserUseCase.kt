@@ -1,4 +1,6 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
+
+
 
 class UserUseCase private constructor() {
 
@@ -26,6 +28,9 @@ class UserUseCase private constructor() {
     fun deleteCallbackNumberPhone() {
         numberPhoneCallback = null
 
+    }
+    suspend fun getNumberPhone(): String{
+        return repository.getUser()?.numberPhone.toString()
     }
 
     fun addSmsCallback(callbackSMS: SmsCallback) {

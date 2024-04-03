@@ -1,7 +1,4 @@
-package ru.marina_w.my_map
-
-import java.sql.ClientInfoStatus
-import java.text.FieldPosition
+package ru.marina.mymap
 
 data class UserModel(
     val userName: String? =null,

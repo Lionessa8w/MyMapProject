@@ -1,4 +1,4 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
 
 interface NumberPhoneCallback {
     fun setResultNumberPhoneResponseState(state: AuthNumberPhoneResponseState)

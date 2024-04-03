@@ -1,6 +1,6 @@
-package ru.marina_w.my_map.user_profile_view_model_state
+package ru.marina.mymap.user_profile_view_model_state
 
-import ru.marina_w.my_map.UserModel
+import ru.marina.mymap.UserModel
 
 sealed class UserProfileState {
     data class Error(val message: String) : UserProfileState()

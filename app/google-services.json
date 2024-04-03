@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "507353497703",
+    "project_id": "mymaps-fccea",
+    "storage_bucket": "mymaps-fccea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507353497703:android:559aa228878a4f5e4a94c2",
+        "android_client_info": {
+          "package_name": "ru.marina.mymap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcUaoxcqR4zJXq8GOVYrIbQuDBTGFzlKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

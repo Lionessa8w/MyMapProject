@@ -1,4 +1,4 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
 
 sealed class ViewModelState {
     data class Error(val message: String) : ViewModelState()

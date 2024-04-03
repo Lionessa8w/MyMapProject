@@ -1,4 +1,4 @@
-package ru.marina_w.my_map
+package ru.marina.mymap
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,9 +12,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
-import ru.marina.mymap.R
-import ru.marina_w.my_map.auth.UserProfileViewModel
-import ru.marina_w.my_map.user_profile_view_model_state.UserProfileState
+import ru.marina.mymap.auth.UserProfileViewModel
+
+import ru.marina.mymap.user_profile_view_model_state.UserProfileState
 
 class UserProfileFragment : Fragment() {
 

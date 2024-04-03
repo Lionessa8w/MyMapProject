@@ -1,4 +1,4 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
 
 interface SmsCallback {
     fun setResultSmsCode(state: AuthSmsResponseState)

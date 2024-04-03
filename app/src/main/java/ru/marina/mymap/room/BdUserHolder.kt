@@ -1,4 +1,6 @@
-package ru.marina_w.my_map.room
+package ru.marina.mymap.room
+
+
 
 import android.content.Context
 import androidx.room.Room

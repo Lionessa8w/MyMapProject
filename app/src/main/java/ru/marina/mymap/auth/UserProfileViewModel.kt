@@ -1,14 +1,13 @@
-package ru.marina_w.my_map.auth
-
+package ru.marina.mymap.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import ru.marina_w.my_map.room.FavoritePlaceEntity
-import ru.marina_w.my_map.room.UserInfoEntity
-import ru.marina_w.my_map.user_profile_view_model_state.UserProfileState
+import ru.marina.mymap.room.FavoritePlaceEntity
+import ru.marina.mymap.room.UserInfoEntity
+import ru.marina.mymap.user_profile_view_model_state.UserProfileState
 
 class UserProfileViewModel : ViewModel() {
 
@@ -22,9 +21,14 @@ class UserProfileViewModel : ViewModel() {
         fetchProfile()
     }
 
-    fun fetchProfile() {
+    private fun fetchProfile() {
         viewModelScope.launch(Dispatchers.IO) {
-            _flowUserState.emit(UserProfileState.Success(useCase.getUser()))
+            val userModel = useCase.getUser()
+            if (userModel != null) {
+                _flowUserState.emit(UserProfileState.Success(userModel))
+            } else {
+                _flowUserState.emit(UserProfileState.Error("Error"))
+            }
         }
     }
 

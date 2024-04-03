@@ -1,4 +1,4 @@
-package ru.marina_w.my_map
+package ru.marina.mymap
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
 import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.mapview.MapView
-import ru.marina.mymap.R
 import ru.marina.mymap.databinding.FragmentMapBinding
 
 class MapFragment : Fragment() {
@@ -34,7 +33,7 @@ class MapFragment : Fragment() {
         // показывает начальную точку карты
         moveToStartLocation()
     }
-
+// установка начальной точки
     private fun moveToStartLocation() {
         binding.mapview.map.move(
             CameraPosition(startLocation, zoomValue, 0.0f, 0.0f)

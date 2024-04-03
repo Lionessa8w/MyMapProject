@@ -1,12 +1,11 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
 
-
-import ru.marina_w.my_map.room.BdUserHolder
-import ru.marina_w.my_map.room.FavoritePlaceEntity
+import ru.marina.mymap.room.BdUserHolder
+import ru.marina.mymap.room.FavoritePlaceEntity
 
 class PlaceMapRepository {
 
-    private val placeRepository=BdUserHolder.getInstance().getDatabase().placeDao()
+    private val placeRepository= BdUserHolder.getInstance().getDatabase().placeDao()
 
 
     // DataBase

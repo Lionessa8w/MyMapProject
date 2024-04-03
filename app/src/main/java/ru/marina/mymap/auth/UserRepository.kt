@@ -1,4 +1,4 @@
-package ru.marina_w.my_map.auth
+package ru.marina.mymap.auth
 
 import android.app.Activity
 import android.util.Log
@@ -9,8 +9,8 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.auth
 import java.util.concurrent.TimeUnit
-import ru.marina_w.my_map.room.BdUserHolder
-import ru.marina_w.my_map.room.UserInfoEntity
+import ru.marina.mymap.room.BdUserHolder
+import ru.marina.mymap.room.UserInfoEntity
 
 
 private const val TAG = "UserRepository"
@@ -87,7 +87,7 @@ class UserRepository private constructor() {
     }
 
     //База данных
-    suspend fun addUserId(entity: UserInfoEntity) {
+    suspend fun addUser(entity: UserInfoEntity) {
         userListDao.addNewUser(entity)
     }
 
@@ -95,8 +95,12 @@ class UserRepository private constructor() {
         userListDao.deletedIdUser(id)
     }
 
-    suspend fun getUser(): UserInfoEntity {
-        return userListDao.getUser()
+    suspend fun getUser(): UserInfoEntity? {
+        return try {
+            userListDao.getUser()
+        } catch (e: Throwable) {
+            return null
+        }
     }
 
 

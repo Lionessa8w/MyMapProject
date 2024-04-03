@@ -1,15 +1,15 @@
-package ru.marina_w.my_map
+package ru.marina.mymap
 
-import ru.marina_w.my_map.room.FavoritePlaceEntity
-import ru.marina_w.my_map.room.UserInfoEntity
+import ru.marina.mymap.room.FavoritePlaceEntity
+import ru.marina.mymap.room.UserInfoEntity
 
 class UserModelMapper {
-    fun mapUserModel(entity: UserInfoEntity,entityPlace: FavoritePlaceEntity): UserModel{
+    fun mapUserModel(entity: UserInfoEntity, entityPlace: FavoritePlaceEntity?): UserModel {
         return UserModel(userName = entity.userName,
             numberPhone = entity.numberPhone,
             userImageUrl = entity.uriImageAvatar,
             userPublicStatus = entity.statusSound,
-            userGeoPosition = entityPlace.geoPosition)
+            userGeoPosition = entityPlace?.geoPosition)
 
     }
 }
