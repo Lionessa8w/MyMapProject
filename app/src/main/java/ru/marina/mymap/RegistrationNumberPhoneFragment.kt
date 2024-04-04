@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -17,13 +18,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.marina.mymap.auth.ActionNumberPhone
 import ru.marina.mymap.auth.RegistrationPhoneViewModel
+import ru.marina.mymap.auth.UserProfileViewModel
 
 const val NUMBER_LENGTH = 10
 
 class RegistrationNumberPhoneFragment : Fragment() {
 
-    private val viewModelPhoneNumber = RegistrationPhoneViewModel()
+    private var viewModelPhoneNumber = RegistrationPhoneViewModel()
     private var timerJob: Job? = null
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -37,6 +40,8 @@ class RegistrationNumberPhoneFragment : Fragment() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        viewModelPhoneNumber= ViewModelProvider(this)[RegistrationPhoneViewModel::class.java]
+
         super.onCreate(savedInstanceState)
         Log.d("checkResult", "onCreate: сюда зашел onCreate fragment")
 

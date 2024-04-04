@@ -12,7 +12,9 @@ import kotlinx.coroutines.launch
 import ru.marina.mymap.room.UserInfoEntity
 
 //Ввод смс
-class SmsAuthorizationViewModel : ViewModel() {
+class SmsAuthorizationViewModel(
+    private val phoneNumber: String
+) : ViewModel() {
 
     private var smsCode: String? = null
     private val useCase = UserUseCase.getInstance()
@@ -29,11 +31,9 @@ class SmsAuthorizationViewModel : ViewModel() {
                     }
 
                     is AuthSmsResponseState.Success -> {
-                        //// add user to bd через use case
                         userProfileUseCase.addUser(
                             UserInfoEntity(
-                            id = Firebase.auth.currentUser?.uid.toString(),
-                            numberPhone = useCase.getNumberPhone(),
+                            numberPhone = phoneNumber,
                             userName = "AAA",
                             uriImageAvatar = "https://avatars.mds.yandex.net/get-kinopoisk-image/4483445/5d39486d-feda-49b8-a42d-b4b2d4234c27/3840x",
                             statusSound = "Good Sound"

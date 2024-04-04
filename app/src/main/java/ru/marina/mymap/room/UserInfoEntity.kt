@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_info_entity")
 data class UserInfoEntity(
-    @PrimaryKey val id: String,
-    @ColumnInfo(name = "number_phone") val numberPhone: String,
+
+    @PrimaryKey() val numberPhone: String,
     @ColumnInfo(name = "user_name") val userName: String,
     @ColumnInfo(name = "uri_image_avatar") val uriImageAvatar: String,
     @ColumnInfo(name = "status_sound") val statusSound: String

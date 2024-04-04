@@ -1,4 +1,5 @@
 package ru.marina.mymap.auth
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +14,8 @@ class UserProfileViewModel : ViewModel() {
 
     private val _flowUserState = MutableStateFlow<UserProfileState>(UserProfileState.Loading())
     val flowUserState = _flowUserState.asStateFlow()
+
+    private var currentName: String? = null
 
 
     private val useCase = UserProfileUseCase()
@@ -32,10 +35,10 @@ class UserProfileViewModel : ViewModel() {
         }
     }
 
-    fun deleteUserProfile(id: String, idPlace: String) {
+    fun deleteUserProfile() {
         viewModelScope.launch(Dispatchers.IO) {
-            useCase.deleteUser(id)
-            useCase.deletePlace(idPlace)
+            useCase.deleteUser()
+            useCase.deleteAllPlaces()
         }
     }
 
@@ -44,6 +47,13 @@ class UserProfileViewModel : ViewModel() {
             useCase.addUser(entity)
             useCase.addPlace(entityPlaceEntity)
         }
+    }
+
+    fun setCurrentUserName(name: String) {
+        currentName = name
+    }
+    fun getCurrentUserName(): String{
+        return currentName ?: ""
     }
 
 

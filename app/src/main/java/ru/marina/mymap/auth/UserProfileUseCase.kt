@@ -13,11 +13,14 @@ class UserProfileUseCase {
     //База данных
 
     suspend fun addUser(entity: UserInfoEntity) {
+        // если есть юзер в базе то return
+        if (entity == repository.getUser()) return
         repository.addUser(entity)
     }
 
-    suspend fun deleteUser(id: String) {
-        repository.deleteUser(id)
+    suspend fun deleteUser() {
+        val userId = repository.getUser()?.numberPhone ?: return
+        repository.deleteUser(userId)
     }
 
     suspend fun getUser(): UserModel? {
@@ -36,6 +39,13 @@ class UserProfileUseCase {
     suspend fun getAllPlaces(): List<FavoritePlaceEntity> {
         return repositoryPlace.allPlaceList()
 
+    }
+
+    suspend fun deleteAllPlaces() {
+        val listPlaceId = getAllPlaces().map { it.placeId }
+        for (placeId in listPlaceId) {
+            deletePlace(placeId)
+        }
     }
 
 

@@ -20,6 +20,7 @@ class UserRepository private constructor() {
     private val firebaseAuth = Firebase.auth
     private var storedVerificationId: String? = ""
     private val userListDao = BdUserHolder.getInstance().getDatabase().userListDao()
+    private lateinit var idNumberPhone: String
 
 
     fun bind(activity: Activity) {
@@ -31,6 +32,7 @@ class UserRepository private constructor() {
     }
 
     fun sendFonNumber(numberPhone: String, callback: NumberPhoneCallback) {
+        idNumberPhone = numberPhone
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber(numberPhone) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
@@ -77,7 +79,7 @@ class UserRepository private constructor() {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(activity!!) { task ->
                 if (task.isSuccessful) {
-                    callback?.setResultSmsCode(AuthSmsResponseState.Success())
+                    callback?.setResultSmsCode(AuthSmsResponseState.Success(idNumberPhone))
 
 
                 } else {

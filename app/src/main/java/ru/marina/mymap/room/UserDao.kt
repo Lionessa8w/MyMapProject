@@ -14,7 +14,7 @@ interface UserDao {
 
     // удаление одного юзера из одного
     //убрать йди
-    @Query("DELETE FROM user_info_entity WHERE id = :id")
+    @Query("DELETE FROM user_info_entity WHERE numberPhone = :id")
     fun deletedIdUser(id: String)
 
     @Insert(entity = UserInfoEntity::class)
